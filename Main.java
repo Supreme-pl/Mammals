@@ -16,7 +16,7 @@ class Mammal {
         return className+","+name + ","+birthYear+","+young+",";
     }
 
-    void zapisz(FileOutputStream fos) {
+    void save(FileOutputStream fos) {
 
     }
 }
@@ -33,7 +33,7 @@ class Wolf extends Mammal {
         return super.toString() + herdName + "," + position;
     }
 
-    void zapisz(FileOutputStream fos) {
+    void save(FileOutputStream fos) {
         String daneObiektu = this.introduceUrself();
         try {
             byte [] daneObiektuTab = daneObiektu.getBytes();
@@ -62,7 +62,7 @@ class Wadera extends Mammal {
     public void addWhelp(int numer, Mammal whelp){
         this.whelps[numer] = whelp;
     }
-    void zapisz(FileOutputStream fos) {
+    void save(FileOutputStream fos) {
 
         String daneObiektu = this.introduceUrself();
 
@@ -136,11 +136,11 @@ public class Main {
 
         for(Mammal herdMember : herd1)
         {
-            herdMember.zapisz(fos);
+            herdMember.save(fos);
         }
         for(Mammal herdMember : herd2)
         {
-            herdMember.zapisz(fos);
+            herdMember.save(fos);
         }
     }
 }
